@@ -1,3 +1,3 @@
 # Snake
 
-A Snake Game 
+A Snake Browser Game 
