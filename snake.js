@@ -50,6 +50,11 @@
                              isTouching = true
                          }
                     }
+                    if(!isTouching){
+                        break;
+                    }
+                    this.color = "pink"
+                    this.size = sneak.size
                 }
             }
     }
@@ -74,4 +79,17 @@ function gameLoop(){
 function show(){
     update();
     draw();
+}
+
+function update(){
+
+}
+
+function draw(){
+    createReact(0,0, canvas.width, canvas.height, "black")
+    createReact(0,0, canvas.width, canvas.height)
+    for(var i = 0; i < snake.tail.length; i++){
+        createReact(snake.tail[i].x + 2.5, snake.tail[i].y +2.5)
+            snake.size -5, snake.size -5, 'white'
+    }
 }
