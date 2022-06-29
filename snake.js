@@ -82,6 +82,7 @@ function show(){
 }
 
 function update(){
+    snake.move()
 
 }
 
@@ -102,3 +103,13 @@ function createReact(x, y, width, height, color){
     canvasContext.fillStyle = color
     canvasContext.fillReact (x, y, width, height, color)
 }
+
+window.addEventListener("keydown", (event)=>{
+    setTimeout({
+        if(event.keyCode == 37 && snake.rotateX != 1){
+            snake.rotateX = 1
+            snake.rotateY = 0;
+
+        }
+    }, 1)
+})
