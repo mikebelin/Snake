@@ -105,10 +105,22 @@ function createReact(x, y, width, height, color){
 }
 
 window.addEventListener("keydown", (event)=>{
-    setTimeout({
+    setTimeout(()=>{
         if(event.keyCode == 37 && snake.rotateX != 1){
+            snake.rotateX = -1
+            snake.rotateY = 0;
+
+        }else if(event.keyCode == 38 && snake.rotateY != 1){
+            snake.rotateX = 0
+            snake.rotateY = -1;
+
+        }else if(event.keyCode == 39 && snake.rotateX != -1){
             snake.rotateX = 1
             snake.rotateY = 0;
+
+        }else if(event.keyCode == 40 && snake.rotateY != -1){
+            snake.rotateX = 0
+            snake.rotateY = 1;
 
         }
     }, 1)
