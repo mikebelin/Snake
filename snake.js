@@ -82,6 +82,8 @@ function show(){
 }
 
 function update(){
+    canvasContext.clearReact(0, 0, canvas.width, canvas.height)
+    console.log("update")
     snake.move()
 
 }
