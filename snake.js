@@ -55,6 +55,7 @@
                     }
                     this.color = "pink"
                     this.size = sneak.size
+                    console.log(this.x, this.y)
                 }
             }
     }
