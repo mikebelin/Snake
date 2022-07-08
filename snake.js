@@ -40,6 +40,8 @@
 
     class Apple{
             constructor(){
+                console.log("apple")
+                console.log(snake.size)
                 var isTouching;
                 while(true){
                     isTouching = false; 
@@ -50,12 +52,13 @@
                              isTouching = true
                          }
                     }
+                    console.log(this.x, this.y)
+
                     if(!isTouching){
                         break;
                     }
                     this.color = "pink"
-                    this.size = sneak.size
-                    console.log(this.x, this.y)
+                    this.size = snake.size
                 }
             }
     }
@@ -106,7 +109,7 @@ function draw(){
     }
     canvasContext.font = "20px Arial"
     canvasContext.fillStyle = "#00FF42"
-    canvasContext.fillText("Score: ", (snake.tail.length +1), canvas.width -120, 18); 
+    canvasContext.fillText("Score: " + (snake.tail.length +1), canvas.width - 120, 18); 
     createReact(apple.x, apple.y, apple.size, apple.color)
 }
 
