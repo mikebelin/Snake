@@ -76,7 +76,7 @@ window.onload = ()=>{
 }
 
 function gameLoop(){
-    setInterval(snow, 1000/15) 
+    setInterval(snow, 1000/20) //fps value of 20 aka intensity
 }
 
 function show(){
@@ -94,14 +94,14 @@ function update(){
 
 function checkHitWall(){
     var headTail = snake.tail[snake.tail.length -1]
-    if(headTail.x == snake.size){
-        headTail.tail.x = canvas.width - snake.size
-    }else if(headTail.x == snake.size){
-        headTail.tail.x = canvas.width - snake.size
-    }else if(headTail.x == snake.size){
-        headTail.tail.x = canvas.width - snake.size
-    }else if(headTail.x == snake.size){
-        headTail.tail.x = canvas.width - snake.size
+    if(headTail.x == - snake.size){
+        headTail.x = canvas.width - snake.size
+    }else if(headTail.x == canvas.width){
+        headTail.x = 0
+    }else if(headTail.y == - snake.size){
+        headTail.y = canvas.height - snake.size
+    }else if(headTail.y == canvas.height){
+        headTail.y = 0
     }
 }
 
