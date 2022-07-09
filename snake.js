@@ -53,12 +53,11 @@
                          }
                     }
                     console.log(this.x, this.y)
-
+                    this.size = snake.size
+                    this.color = "pink"
                     if(!isTouching){
                         break;
                     }
-                    this.color = "pink"
-                    this.size = snake.size
                 }
             }
     }
@@ -90,6 +89,20 @@ function update(){
     console.log("update")
     snake.move()
     eatApple()
+    checkHitWall();
+}
+
+function checkHitWall(){
+    var headTail = snake.tail[snake.tail.length -1]
+    if(headTail.x == snake.size){
+        headTail.tail.x = canvas.width - snake.size
+    }else if(headTail.x == snake.size){
+        headTail.tail.x = canvas.width - snake.size
+    }else if(headTail.x == snake.size){
+        headTail.tail.x = canvas.width - snake.size
+    }else if(headTail.x == snake.size){
+        headTail.tail.x = canvas.width - snake.size
+    }
 }
 
 function eatApple(){
@@ -109,8 +122,8 @@ function draw(){
     }
     canvasContext.font = "20px Arial"
     canvasContext.fillStyle = "#00FF42"
-    canvasContext.fillText("Score: " + (snake.tail.length +1), canvas.width - 120, 18); 
-    createReact(apple.x, apple.y, apple.size, apple.color)
+    canvasContext.fillText("Score: " + (snake.tail.length - 1), canvas.width - 120, 18); 
+    createReact(apple.x, apple.y, apple.size, apple.size, apple.color)
 }
 
 function createReact(x, y, width, height, color){
